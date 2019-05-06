@@ -3,4 +3,48 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #F2D1C9;
+
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  height: 100px;
+  width: calc(100vw-.8em);
+  background: #8E4AD3;
+  color: #222;
+  font-size: 24px;
+}
+
+.home {
+  margin-left: 1em;
+}
+
+.header h3 {
+  border: solid 2px #999;
+  height: 1.2em;
+  border-radius: 10px;
+  padding: .2em;
+}
+
+.postAboutHeader {
+  width: 9em;
+  margin-right: 1.2em;
+}
+
+.mainDiv {
+  min-height: 100vh;
+  background: #B99EFF;
+}
+
+.navBar {
+  height: 100px;
+  width: 80%;
+  background: #fff;
 }

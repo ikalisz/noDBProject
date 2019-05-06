@@ -1,12 +1,12 @@
 import React from 'react'
-
+import '../App.css'
 export default function Header() {
     return (
-        <header>
-            <h3>
+        <header className="header spaceBetween">
+            <h3 className="home">
                 Home
             </h3>
-            <div>
+            <div className="postAboutHeader spaceBetween">
                 <h3>Posts</h3>
                 <h3>About</h3>
             </div>
