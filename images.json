@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "img" : "../StickFigure.png",
+        "gender" : "male",
+        "thickness" : "thin",
+        "hair" : "none",
+        "hairColor": "none"
+    },
+    {
+        "id": 0,
+        "img" : "string of img location",
+        "gender" : "string of gender",
+        "thickness" : "string of thickness",
+        "hair" : "string of hair length",
+        "hairColor": "string of hair color"
+    }
+]
