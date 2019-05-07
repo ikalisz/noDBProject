@@ -9,6 +9,7 @@ export default class Nav extends Component {
         super()
         this.state = {
             anchorEl: null,
+            hairColor: ''
         }
     }
 
@@ -20,18 +21,28 @@ export default class Nav extends Component {
         this.setState({anchorEl: null})
     }
 
+    handleUpdateHairColor = (val) => {
+        this.setState({hairColor: val})
+        console.log(this.state.hairColor)
+    }
+
+    handleonClickUpdate = (val) => {
+        this.handleClose()
+        this.handleUpdateHairColor(val)
+    }
+
     render() {
         const {anchorEl} = this.state
         return (
             <nav className="navBar">
                 <div>
-                    <h3>Gender</h3>
+                    <h3>Hair Color</h3>
                     <Button 
                     aria-owns={anchorEl ? 'simple-menu' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
                     >
-                    Open Menu
+                    Select Hair Color
                     </Button>
                     <Menu
                         id="simple-menu"
@@ -39,7 +50,8 @@ export default class Nav extends Component {
                         open={Boolean(anchorEl)}
                         onClose={this.handleClose}
                         >
-                    <MenuItem>Working!</MenuItem>
+                    <MenuItem onClick={() => this.handleonClickUpdate('red')}>Red</MenuItem>
+                    <MenuItem onClick={() => this.handleonClickUpdate('green')}>Green</MenuItem>
                     </Menu>
                     
                 </div>
