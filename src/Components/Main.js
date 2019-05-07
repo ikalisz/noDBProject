@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../App.css'
 import Nav from './Nav'
+import images from '../images'
 
 export default class Main extends Component {
     constructor() {
@@ -10,14 +11,15 @@ export default class Main extends Component {
         }
     }
     render() {
-        setTimeout(() => {
-        this.setState({imageToDisplay: this.props.stickFigure.img})
-        }, 3000)
+        // setTimeout(() => {
+        // this.setState({imageToDisplay: this.props.stickFigure.img})
+        // }, 3000)
+        console.log(images)
         return (
             <main className="mainDiv">
                 <Nav />
                 <div className="imageToDisplay">
-                    <img src={this.state.imageToDisplay} alt="" />
+                    <img src={images.modules[0].img} alt="" />
                 </div>
             </main>
         )
