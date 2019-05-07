@@ -7,7 +7,7 @@ export default class Main extends Component {
     constructor() {
         super()
         this.state = {
-            imageToDisplay: ''
+            imageToDisplay: '',
         }
     }
     render() {
@@ -17,9 +17,15 @@ export default class Main extends Component {
         console.log(images)
         return (
             <main className="mainDiv">
-                <Nav />
+                <Nav 
+                gender={this.props.gender}
+                thickness={this.props.thickness}
+                hairStyle={this.props.hairStyle}
+                hairColor={this.props.hairColor}
+                handleUpdateGender={this.props.handleUpdateGender}
+                />
                 <div className="imageToDisplay">
-                    <img src={images.modules[0].img} alt="" />
+                    <img src={images.modules[2].img} alt="" />
                 </div>
             </main>
         )

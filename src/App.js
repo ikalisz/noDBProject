@@ -11,10 +11,8 @@ class App extends Component {
     this.state = {
       gender: '',
       thickness: '',
-      hair: '',
+      hairStyle: '',
       hairColor: '',
-      images: [],
-      imageOne: ''
     }
   }
   componentDidMount() {
@@ -22,15 +20,27 @@ class App extends Component {
       .get('http://localhost:3255/api/images')
         .then(response => {
           this.setState({images: response.data.modules})
-          // this.setState({imageOne: response.data.modules[0].img})
           console.log(response.data.modules)
         })
   }
 
-  
+  handleUpdateGender = (val) => {
+    this.setState({gender: val})
+  }
+
+  handleUpdateThickness = (val) => {
+    this.setState({thickness: val})
+  }
+
+  handleUpdateHairStyle = (val) => {
+    this.setState({hairStyle: val})
+  }
+
+  handleUpdateHairColor = (val) => {
+    this.setState({hairColor: val})
+  }
 
   render() {
-    console.log(this.state.imageOne)
     return (
       <div>
         {/* here goes the header component */}
@@ -39,7 +49,16 @@ class App extends Component {
         <div className="bodyDiv">
 
 
-          <Main />
+          <Main 
+          gender={this.state.gender} 
+          hairColor={this.state.hairColor}
+          thickness={this.state.thickness}
+          hairStyle={this.state.hair}
+          handleUpdateGender={this.handleUpdateGender}
+          handleUpdateThickness={this.handleUpdateThickness}
+          handleUpdateHairStyle={this.handleUpdateHairStyle}
+          handleUpdateHairColor={this.handleUpdateHairColor}
+          />
           <footer>
 
           </footer>

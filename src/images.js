@@ -17,6 +17,14 @@ exports.modules = [
         thickness: 'thin',
         hair: 'short',
         hairColor: 'green'
+    },
+    {
+        id: 2,
+        img: require('./imagesFigures/StickFigureRedLongHairHeavyFemale.png'),
+        gender: 'female',
+        thickness: 'heavy',
+        hair: 'long',
+        hairColor: 'red'
     }
     
 ]

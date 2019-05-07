@@ -34,7 +34,7 @@ body {
 }
 
 .header h3 {
-  border: solid 2px #999;
+  border: solid 2px #E54B4B;
   height: 1.2em;
   border-radius: 10px;
   padding: .2em;
@@ -58,9 +58,26 @@ body {
 }
 
 .navBar {
-  height: 100px;
-  width: 20%;
+  background: none;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+.selector {
   background: #fff;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
   color: #E54B4B;
 }
 
@@ -72,16 +89,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.navBar{
-  background: #fff;
-  height: 100px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
 }
