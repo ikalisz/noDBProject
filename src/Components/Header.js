@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="header spaceBetween">
             <h3 className="home">
-                Home
+                iHome
             </h3>
             <div className="postAboutHeader spaceBetween">
                 <h3>Posts</h3>

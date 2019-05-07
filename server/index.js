@@ -1,11 +1,15 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const images = require()
 const port = 3255
-
+const images = require('../images.js')
 app.use(cors())
 app.use(express.json())
+
+app.get('/api/images', (req, res) => {
+    res.status(200).send(images)
+})
+
 
 
 

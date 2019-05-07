@@ -4,8 +4,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background: #F2D1C9;
+  background: #444140;
 
+}
+
+.bodyDiv {
+  margin-top:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .spaceBetween {
@@ -17,8 +24,8 @@ body {
 .header {
   height: 100px;
   width: calc(100vw-.8em);
-  background: #8E4AD3;
-  color: #222;
+  background: #1E1E24;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -40,11 +47,21 @@ body {
 
 .mainDiv {
   min-height: 100vh;
-  background: #B99EFF;
+  background: #1E1E24;
+  width: 95vw;
+  border: 5px solid #E54B4B;
+  border-radius: 20px;
+  margin-bottom: 4em;
 }
 
 .navBar {
   height: 100px;
-  width: 80%;
+  width: 20%;
   background: #fff;
+  color: #E54B4B;
+}
+
+.imageToDisplay {
+  height: 200px;
+  width: 200px;
 }
