@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import GenderButton from './GenderButton'
 import ThicknessButton from './ThicknessButton'
+import HairStyleButton from './HairStyleButton'
 
 export default class Nav extends Component {
     constructor() {
@@ -25,7 +26,6 @@ export default class Nav extends Component {
 
     handleUpdateHairColor = (val) => {
         this.setState({hairColor: val})
-        console.log(this.state.hairColor)
     }
 
     handleonClickUpdate = (val) => {
@@ -45,26 +45,10 @@ export default class Nav extends Component {
                 handleUpdateThickness={this.props.handleUpdateThickness}
                 thickness={this.props.thickness}
                 />
-                <div className="selector">
-                <h3>Hair Color</h3>
-                    <Button 
-                    aria-owns={anchorEl ? 'simple-menu' : undefined}
-                    aria-haspopup="true"
-                    onClick={this.handleClick}
-                    >
-                    Select Hair Color
-                    </Button>
-                    <Menu
-                        id="simple-menu"
-                        anchorEl={anchorEl}
-                        open={Boolean(anchorEl)}
-                        onClose={this.handleClose}
-                        >
-                    <MenuItem onClick={() => this.handleonClickUpdate('red')}>Red</MenuItem>
-                    <MenuItem onClick={() => this.handleonClickUpdate('green')}>Green</MenuItem>
-                    </Menu>
-                    <span>Selected: {this.state.hairColor}</span>
-                </div>
+                <HairStyleButton 
+                hairStyle={this.props.hairStyle} 
+                handleUpdateHairStyle={this.props.handleUpdateHairStyle}
+                />
                 <div className="selector">
                 <h3>Hair Color</h3>
                     <Button 

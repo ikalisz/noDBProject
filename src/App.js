@@ -53,7 +53,7 @@ class App extends Component {
           gender={this.state.gender} 
           hairColor={this.state.hairColor}
           thickness={this.state.thickness}
-          hairStyle={this.state.hair}
+          hairStyle={this.state.hairStyle}
           handleUpdateGender={this.handleUpdateGender}
           handleUpdateThickness={this.handleUpdateThickness}
           handleUpdateHairStyle={this.handleUpdateHairStyle}
