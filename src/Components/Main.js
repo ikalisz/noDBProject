@@ -23,6 +23,7 @@ export default class Main extends Component {
                 hairStyle={this.props.hairStyle}
                 hairColor={this.props.hairColor}
                 handleUpdateGender={this.props.handleUpdateGender}
+                handleUpdateThickness={this.props.handleUpdateThickness}
                 />
                 <div className="imageToDisplay">
                     <img src={images.modules[2].img} alt="" />

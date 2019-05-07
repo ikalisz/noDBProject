@@ -21,7 +21,7 @@ export default class ThicknessButton extends Component {
     }
 
     handleUpdate = (val) => {
-        this.props.handleUpdateGender(val)
+        this.props.handleUpdateThickness(val)
         this.handleClose()
     }
 
@@ -29,13 +29,13 @@ export default class ThicknessButton extends Component {
         const {anchorEl} = this.state
         return (
             <div className="selector Hair">
-                <h3>Gender</h3>
+                <h3>Thickness</h3>
                 <Button 
                 aria-owns={anchorEl ? 'simple-menu' : undefined}
                 aria-haspopup="true"
                 onClick={this.handleClick}
                 >
-                Select Hair Color
+                Select Thickness
                 </Button>
                 <Menu
                     id="simple-menu"
@@ -43,10 +43,11 @@ export default class ThicknessButton extends Component {
                     open={Boolean(anchorEl)}
                     onClose={this.handleClose}
                     >
-                <MenuItem onClick={() => this.handleUpdate('male')}>Male</MenuItem>
-                <MenuItem onClick={() => this.handleUpdate('female')}>Female</MenuItem>
+                <MenuItem onClick={() => this.handleUpdate('stick')}>Stick</MenuItem>
+                <MenuItem onClick={() => this.handleUpdate('round')}>Round</MenuItem>
+                <MenuItem onClick={() => this.handleUpdate('rounder')}>Rounder</MenuItem>
                 </Menu>
-                <span>Selected: {this.props.gender}</span>
+                <span>Selected: {this.props.thickness}</span>
                 
             </div>
         )
