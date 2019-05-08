@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Header from './Components/Header'
 import './App.css';
 import Main from './Components/Main'
-import axios from 'axios'
 import MessagesMain from './Components/MessagesMain'
 
 class App extends Component {
@@ -13,14 +12,9 @@ class App extends Component {
       thickness: '',
       hairStyle: '',
       hairColor: '',
+      imageToDisplay: '',
+      captionText: '',
     }
-  }
-  componentDidMount() {
-    axios
-      .get('http://localhost:3255/api/images')
-        .then(response => {
-          this.setState({images: response.data.modules})
-        })
   }
 
   handleUpdateGender = (val) => {
@@ -39,7 +33,9 @@ class App extends Component {
     this.setState({hairColor: val})
   }
 
-  
+  handleUpdateImage = (val) => { 
+    this.setState({imageToDisplay: val})
+  }
 
   render() {
     return (
@@ -55,13 +51,19 @@ class App extends Component {
           hairColor={this.state.hairColor}
           thickness={this.state.thickness}
           hairStyle={this.state.hairStyle}
+          imageToDisplay={this.state.imageToDisplay}
+          captionText={this.state.captionText}
           handleUpdateGender={this.handleUpdateGender}
           handleUpdateThickness={this.handleUpdateThickness}
           handleUpdateHairStyle={this.handleUpdateHairStyle}
           handleUpdateHairColor={this.handleUpdateHairColor}
+          handleUpdateImage={this.handleUpdateImage}
           />
 
-          <MessagesMain />
+          <MessagesMain
+          imageToCurrentPost={this.state.imageToDisplay}
+          captionText={this.state.captionText}
+          />
           <footer>
 
           </footer>

@@ -7,11 +7,9 @@ export default class Main extends Component {
     constructor() {
         super()
         this.state = {
-            imageToDisplay: '',
             allowPost: false,
         }
     }
-
     handleFindImage = () => {
         let imageIndex = images.modules.findIndex((val) => {
             return (
@@ -22,15 +20,11 @@ export default class Main extends Component {
             )
         })
         if (imageIndex !== -1) {
-            this.setState({imageToDisplay: images.modules[imageIndex].img})
+            this.handleUpdateImage(images.modules[imageIndex].img)
             this.setState({allowPost: true})
         }
     }
-
     render() {
-        // setTimeout(() => {
-        // this.setState({imageToDisplay: this.props.stickFigure.img})
-        // }, 3000)
         return (
             <main className="mainDiv">
                 <Nav 

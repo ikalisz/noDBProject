@@ -2,13 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 3255
-const images = 'lllll'
-app.use(cors())
-app.use(express.json())
+const mc = require('./controllers/messages_controller')
 
-app.get('/api/images', (req, res) => {
-    res.status(200).send(images)
-})
+app.use(express.json())
+app.use(cors())
+app.get('/api/messages', mc.read)
 
 
 

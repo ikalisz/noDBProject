@@ -2,7 +2,7 @@
     {
         "id": 0,
         "image" : "image generated text",
-        "message": "message text",
+        "caption": "message text",
         "comments": [
             {
                 "commentid": 0,

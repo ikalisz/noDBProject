@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import axios from 'axios'
 
 export default class MessagesMain extends Component {
     constructor() {
@@ -8,10 +8,24 @@ export default class MessagesMain extends Component {
             messages: [],
         }
     }
+    //I want to grab the message Api and store the response in state under messages
+    //I need to grab the generated img when post is clicked.
+    componentDidMount = () => {
+        axios.get('http://localhost:3255/api/messages')
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+
     render() {
-        const posts = this.state.messages.map((val) => {
+        const {messages} = this.state
+        const posts = messages.map((val) => {
             return (
-                <div>
+                <div className="messageDiv">
 
                 </div>
             )

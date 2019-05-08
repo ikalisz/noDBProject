@@ -1,15 +1,20 @@
-
+const messages = require('../../messages.json')
+console.log(messages)
 const controller = {
-    read() {
-
+    read: (req, res) => {
+        res.status(200).send(messages)
     },
-    update() {
-
+    update(req, res) {
+        newPost = {
+            
+        }
     },
     create() {
 
     },
     delete() {
-        
+
     }
 }
+
+module.exports = controller
