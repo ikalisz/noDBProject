@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import './App.css';
 import Main from './Components/Main'
 import axios from 'axios'
-
+import MessagesMain from './Components/MessagesMain'
 
 class App extends Component {
   constructor() {
@@ -60,6 +60,8 @@ class App extends Component {
           handleUpdateHairStyle={this.handleUpdateHairStyle}
           handleUpdateHairColor={this.handleUpdateHairColor}
           />
+
+          <MessagesMain />
           <footer>
 
           </footer>

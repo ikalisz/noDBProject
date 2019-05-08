@@ -50,10 +50,12 @@ export default class Main extends Component {
                     <div className="buttonsAndCaption">
                         <button className="captionButtons" onClick={this.handleFindImage}>Generate</button>
                         { !this.state.allowPost ?
-                        <h3>Generate Something!</h3> 
+                        <h3 className="whiteText">Generate Something!</h3> 
 
-                        : <div>
-                        <input type="text" className="captionText" />
+                        : 
+                        <div className="textAreaAndPostButton">
+                        <h3 className="whiteText">Post Caption:</h3>
+                        <textarea id="textArea" rows="4" cols="30"></textarea>
                         <button className="captionButtons" >Post</button>
                         </div>
                         }

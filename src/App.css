@@ -8,6 +8,10 @@ body {
 
 }
 
+.whiteText {
+  color: #fff;
+}
+
 .bodyDiv {
   margin-top:25px;
   display: flex;
@@ -123,9 +127,30 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   outline: none;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .captionButtons:hover {
   background: #1E1E24;
   color: #fff;
+}
+
+.textAreaAndPostButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.captionText {
+  height: 80%;
+  width: 100%;
+}
+
+#textArea {
+  margin-bottom: 20px;
+}
+
+.messages {
+  min-height: 40vh
 }
