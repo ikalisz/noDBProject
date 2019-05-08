@@ -4,7 +4,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 
-export default class GenderButton extends Component {
+export default class HairColorButton extends Component {
     constructor() {
         super()
         this.state = {
@@ -21,22 +21,21 @@ export default class GenderButton extends Component {
     }
 
     handleUpdate = (val) => {
-        this.props.handleUpdateGender(val)
+        this.props.handleUpdateHairColor(val)
         this.handleClose()
     }
-
 
     render() {
         const {anchorEl} = this.state
         return (
-            <div className="selector Hair">
-                    <h3>Gender</h3>
+            <div className="selector">
+                <h3>Hair Color</h3>
                     <Button 
                     aria-owns={anchorEl ? 'simple-menu' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
                     >
-                    Select Gender
+                    Select Hair Color
                     </Button>
                     <Menu
                         id="simple-menu"
@@ -44,11 +43,10 @@ export default class GenderButton extends Component {
                         open={Boolean(anchorEl)}
                         onClose={this.handleClose}
                         >
-                    <MenuItem onClick={() => this.handleUpdate('male')}>Male</MenuItem>
-                    <MenuItem onClick={() => this.handleUpdate('female')}>Female</MenuItem>
+                    <MenuItem onClick={() => this.handleUpdate('red')}>Red</MenuItem>
+                    <MenuItem onClick={() => this.handleUpdate('green')}>Green</MenuItem>
                     </Menu>
-                    <span>Selected: {this.props.gender}</span>
-                    
+                    <span>Selected: {this.props.hairColor}</span>
                 </div>
         )
     }

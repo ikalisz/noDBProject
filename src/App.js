@@ -20,7 +20,6 @@ class App extends Component {
       .get('http://localhost:3255/api/images')
         .then(response => {
           this.setState({images: response.data.modules})
-          console.log(response.data.modules)
         })
   }
 
@@ -39,6 +38,8 @@ class App extends Component {
   handleUpdateHairColor = (val) => {
     this.setState({hairColor: val})
   }
+
+  
 
   render() {
     return (

@@ -6,24 +6,24 @@ exports.modules = [
         id: 0,
         img : require('./imagesFigures/StickFigure.png'),
         gender : "male",
-        thickness : "thin",
-        hair : "none",
+        thickness : "stick",
+        hairStyle: "none",
         hairColor: "none",
     },
     {
         id: 1,
         img : require('./imagesFigures/StickFigureGreenShortHairThin.png'),
         gender: 'male',
-        thickness: 'thin',
-        hair: 'short',
+        thickness: 'stick',
+        hairStyle: 'short',
         hairColor: 'green'
     },
     {
         id: 2,
         img: require('./imagesFigures/StickFigureRedLongHairHeavyFemale.png'),
         gender: 'female',
-        thickness: 'heavy',
-        hair: 'long',
+        thickness: 'rounder',
+        hairStyle: 'long',
         hairColor: 'red'
     }
     
