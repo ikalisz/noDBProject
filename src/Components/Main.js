@@ -2,12 +2,15 @@ import React, {Component} from 'react'
 import '../App.css'
 import Nav from './Nav'
 import images from '../images'
+import axios from 'axios';
 
 export default class Main extends Component {
     constructor() {
         super()
         this.state = {
             allowPost: false,
+            captionText: '',
+            imageToDisplay: '',
         }
     }
     handleFindImage = () => {
@@ -24,6 +27,28 @@ export default class Main extends Component {
             this.setState({allowPost: true})
         }
     }
+
+    handleUpdateCaption = (e) => {
+        this.setState({captionText: e.target.value})
+    }
+
+    handleUpdateImage = (val) => { 
+        this.setState({imageToDisplay: val})
+      }
+
+    handleCreatePost = () => {
+        axios.post('/api/messages', {
+            image: this.state.imageToDisplay,
+            captionText: this.state.captionText
+        })
+        .then(res => {
+            this.props.handleUpdateMessages(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
     render() {
         return (
             <main className="mainDiv">
@@ -49,8 +74,8 @@ export default class Main extends Component {
                         : 
                         <div className="textAreaAndPostButton">
                         <h3 className="whiteText">Post Caption:</h3>
-                        <textarea id="textArea" rows="4" cols="30"></textarea>
-                        <button className="captionButtons" >Post</button>
+                        <textarea onChange={(e) =>this.handleUpdateCaption(e)} id="textArea" rows="4" cols="30"></textarea>
+                        <button onClick={this.handleCreatePost} className="captionButtons" >Post</button>
                         </div>
                         }
                     </div>

@@ -8,7 +8,9 @@ app.use(express.json())
 app.use(cors())
 app.get('/api/messages', mc.read)
 
+app.post('/api/messages', mc.create)
 
+app.delete('/api/messages/:id', mc.delete)
 
 
 

@@ -154,3 +154,48 @@ body {
 .messages {
   min-height: 40vh
 }
+
+.messageDiv {
+  margin-top: 6em;
+  margin-bottom: 3em;
+  height: 20em;
+  width: 80%;
+  background: #444140;
+  border: solid #E54B4B 5px;
+  border-radius: 15px;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fakeImage {
+  margin-left: 20px;
+  height: 300px;
+  width: 533px;
+  background: #fff;
+  border-radius: 10px;
+}
+.captionAndIdComments {
+  height: 300px;
+  width: 40%;
+  background: #444140;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+.captionAndId {
+  height: 21%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.captionText {
+  margin-left: 10px;
+  width: 40%;
+}
+
+.idText {
+  margin-right: 10px;
+}

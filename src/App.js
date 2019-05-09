@@ -4,6 +4,7 @@ import './App.css';
 import Main from './Components/Main'
 import MessagesMain from './Components/MessagesMain'
 
+
 class App extends Component {
   constructor() {
     super()
@@ -12,8 +13,7 @@ class App extends Component {
       thickness: '',
       hairStyle: '',
       hairColor: '',
-      imageToDisplay: '',
-      captionText: '',
+      messages: [],
     }
   }
 
@@ -33,8 +33,8 @@ class App extends Component {
     this.setState({hairColor: val})
   }
 
-  handleUpdateImage = (val) => { 
-    this.setState({imageToDisplay: val})
+  handleUpdateMessages = (val) => {
+    this.setState({messages: val})
   }
 
   render() {
@@ -51,18 +51,16 @@ class App extends Component {
           hairColor={this.state.hairColor}
           thickness={this.state.thickness}
           hairStyle={this.state.hairStyle}
-          imageToDisplay={this.state.imageToDisplay}
-          captionText={this.state.captionText}
+          handleUpdateMessages={this.handleUpdateMessages}
           handleUpdateGender={this.handleUpdateGender}
           handleUpdateThickness={this.handleUpdateThickness}
           handleUpdateHairStyle={this.handleUpdateHairStyle}
           handleUpdateHairColor={this.handleUpdateHairColor}
-          handleUpdateImage={this.handleUpdateImage}
           />
 
           <MessagesMain
-          imageToCurrentPost={this.state.imageToDisplay}
-          captionText={this.state.captionText}
+          messages={this.state.messages}
+          handleUpdateMessages={this.handleUpdateMessages}
           />
           <footer>
 
