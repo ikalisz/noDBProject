@@ -65,6 +65,31 @@ exports.modules = [
         thickness: 'stick',
         hairStyle: 'short',
         hairColor: 'red'
-    }
+    },
+    {
+        id: 8,
+        img: require('./imagesFigures/StickFigureGreenLongHairRound.png'),
+        gender: 'male',
+        thickness: 'round',
+        hairStyle: 'long',
+        hairColor: 'green'
+    },
+    {
+        id: 9,
+        img: require('./imagesFigures/StickFigureGreenLongHairRounder.png'),
+        gender: 'male',
+        thickness: 'rounder',
+        hairStyle: 'long',
+        hairColor: 'green'
+    },
+    {
+        id: 10,
+        img: require('./imagesFigures/StickFigureGreenShortHairRound.png'),
+        gender: 'male',
+        thickness: 'round',
+        hairStyle: 'short',
+        hairColor: 'green'
+    },
+    
     
 ]

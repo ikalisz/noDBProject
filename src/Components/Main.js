@@ -56,7 +56,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <main className="genMainDiv" id='shrink'>
+            <main className="genMainDiv">
                 <Nav 
                 gender={this.props.gender}
                 thickness={this.props.thickness}
