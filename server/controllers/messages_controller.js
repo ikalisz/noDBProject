@@ -1,5 +1,4 @@
 let messages = require('../../messages.js')
-console.log(messages)
 let messageId = 0
 messageId += messages.length
 
@@ -8,7 +7,20 @@ const controller = {
         res.status(200).send(messages)
     },
     update(req, res) {
-        
+        let {text} = req.body
+        let {id} = req.params
+        let messIndex = messages.findIndex(val => {
+            return val.id === +id
+        })
+        let updateMessage = messages[messIndex]
+        let newPost = {
+            id: updateMessage.id,
+            image: updateMessage.image,
+            caption: text || updateMessage.caption,
+            comments: updateMessage.comments
+        }
+        messages.splice(messIndex, 1, newPost)
+        res.status(200).send(messages)
     },
     create(req, res) {
         let 

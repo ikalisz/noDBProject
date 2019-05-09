@@ -8,6 +8,11 @@ body {
 
 }
 
+.boldText {
+  font-weight: bold;
+  margin-right: 3px;
+}
+
 .whiteText {
   color: #fff;
 }
@@ -145,6 +150,10 @@ body {
 .captionText {
   height: 80%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #textArea {
@@ -179,7 +188,6 @@ body {
   height: 300px;
   width: 40%;
   background: #444140;
-  margin-right: 20px;
   border-radius: 10px;
 }
 .captionAndId {
@@ -188,6 +196,7 @@ body {
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #fff;
 }
 
@@ -198,4 +207,50 @@ body {
 
 .idText {
   margin-right: 10px;
+}
+
+.utilityIcons {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.trashIcon {
+  color: #fff;
+}
+
+.editIcon {
+  color: #fff;
+  margin-top: 5px;
+}
+
+.grow:hover {
+  transition: all .2 linear;
+  color: #E54B4B;
+}
+
+.trashIcon:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.5);
+}
+
+.editIcon:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.5);
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #444140;
+  color: #fff;
+  border-radius: 25px;
+  border-color: #E54B4B;
+  border-width: 3px;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  margin-left: 5.4em;
+  margin-top: 5px;
 }
