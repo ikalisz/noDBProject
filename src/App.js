@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import './App.css';
 import Main from './Components/Main'
 import MessagesMain from './Components/MessagesMain'
-
+import Add from '@material-ui/icons/Add'
 
 class App extends Component {
   constructor() {
@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.postGenerated)
     return (
       <div>
         {/* here goes the header component */}
@@ -56,6 +55,7 @@ class App extends Component {
         <div className="bodyDiv">
 
         
+          {this.state.postGenerated?
           <Main 
           gender={this.state.gender} 
           hairColor={this.state.hairColor}
@@ -68,6 +68,12 @@ class App extends Component {
           handleUpdateHairColor={this.handleUpdateHairColor}
           handleUpdatePostGen={this.handleUpdatePostGen}
           />
+          :
+          <div className="newPostGen" onClick={this.handleUpdatePostGen}>
+            <Add className="plusIcon"/>
+            <button className="plusIconButton">Make a new post.</button>
+          </div>
+          }
 
           <MessagesMain
           messages={this.state.messages}

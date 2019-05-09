@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import '../App.css'
-import DeleteFilled from '@material-ui/icons/Delete'
-import EditFilled from '@material-ui/icons/Edit'
+import MessagePost from './MessagePost'
 
 export default class MessagesMain extends Component {
     constructor() {
@@ -42,11 +41,11 @@ export default class MessagesMain extends Component {
         this.setState({editing: true})
     }
 
-    handleEditSubmit = (e, text) => {
-        axios.put(`/api/messages/${e}`, {text})
+    handleEditSubmit = (id, text) => {
+        axios.put(`/api/messages/${id}`, {text})
         .then(res => {
             this.props.handleUpdateMessages(res.data)
-            this.setState({editing: false})
+        
         })
         .catch(err => {
             console.log(err)
@@ -55,31 +54,17 @@ export default class MessagesMain extends Component {
 
     render() {
         const {messages} = this.props
-        const {text} = this.state
         const posts = messages.map((val) => {
             return (
-                <div key={val.id} className="messageDiv">
-                    <img className="fakeImage" alt="" src={val.image} />
-                    <div className="captionAndIdComments">
-                        <div className="captionAndId">
-                        { !this.state.editing ?
-                        <p className="captionText"><span className="boldText">Caption:</span> {val.caption}</p>
-                        :
-                        <div>
-                        <p className="captionText"><span className="boldText">Caption:</span><input type="text" placeholder={'New text here!'} value={text} onChange={(e) => this.handleUpdateText(e)} /></p>
-                        <button className="submitButton" onClick={() => this.handleEditSubmit(val.id, this.state.text)}>Submit!</button>
-                        </div>
-                        }
-                            <h3 className="idText">Id: {val.id}</h3>
-
-                        </div>
-                    </div>
-                    <div className="utilityIcons">
-                        <DeleteFilled  className="trashIcon grow" onClick={() => this.handleDeletePost(val.id)}/>
-                        <EditFilled className="editIcon grow" onClick={() => this.handleEdit()} />
-
-                    </div>
-                </div>
+                    <MessagePost 
+                    handleEditSubmit={this.handleEditSubmit}
+                    handleDeletePost={this.handleDeletePost}
+                    handleUpdateMessages={this.props.handleUpdateMessages}
+                    id={val.id}
+                    key={val.id}
+                    image={val.image}
+                    caption={val.caption}
+                    />
             )
         })
         return (
