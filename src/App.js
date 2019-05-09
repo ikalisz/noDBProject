@@ -14,6 +14,7 @@ class App extends Component {
       hairStyle: '',
       hairColor: '',
       messages: [],
+      postGenerated: false,
     }
   }
 
@@ -37,7 +38,16 @@ class App extends Component {
     this.setState({messages: val})
   }
 
+  handleUpdatePostGen = () => {
+    if (this.state.postGenerated) {
+      this.setState({postGenerated: false})
+    } else {
+      this.setState({postGenerated: true})
+    }
+  }
+
   render() {
+    console.log(this.state.postGenerated)
     return (
       <div>
         {/* here goes the header component */}
@@ -45,7 +55,7 @@ class App extends Component {
         
         <div className="bodyDiv">
 
-
+        
           <Main 
           gender={this.state.gender} 
           hairColor={this.state.hairColor}
@@ -56,11 +66,13 @@ class App extends Component {
           handleUpdateThickness={this.handleUpdateThickness}
           handleUpdateHairStyle={this.handleUpdateHairStyle}
           handleUpdateHairColor={this.handleUpdateHairColor}
+          handleUpdatePostGen={this.handleUpdatePostGen}
           />
 
           <MessagesMain
           messages={this.state.messages}
           handleUpdateMessages={this.handleUpdateMessages}
+          handleUpdatePostGen={this.handleUpdatePostGen}
           />
           <footer>
 

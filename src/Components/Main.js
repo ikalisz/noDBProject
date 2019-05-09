@@ -48,10 +48,15 @@ export default class Main extends Component {
             console.log(err)
         })
     }
+    
+    handleUpdatePosts = () => {
+        this.handleCreatePost()
+        this.props.handleUpdatePostGen()
+    }
 
     render() {
         return (
-            <main className="mainDiv">
+            <main className="genMainDiv" id='shrink'>
                 <Nav 
                 gender={this.props.gender}
                 thickness={this.props.thickness}
@@ -75,7 +80,7 @@ export default class Main extends Component {
                         <div className="textAreaAndPostButton">
                         <h3 className="whiteText">Post Caption:</h3>
                         <textarea onChange={(e) =>this.handleUpdateCaption(e)} id="textArea" rows="4" cols="30"></textarea>
-                        <button onClick={this.handleCreatePost} className="captionButtons" >Post</button>
+                        <button onClick={this.handleUpdatePosts} className="captionButtons" >Post</button>
                         </div>
                         }
                     </div>

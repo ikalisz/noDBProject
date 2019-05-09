@@ -29,8 +29,8 @@ export default class GenderButton extends Component {
     render() {
         const {anchorEl} = this.state
         return (
-            <div className="selector Hair">
-                    <h3>Gender</h3>
+            <div className="selector Hair" >
+                    <h3 >Gender</h3>
                     <Button 
                     aria-owns={anchorEl ? 'simple-menu' : undefined}
                     aria-haspopup="true"
