@@ -365,6 +365,24 @@ body {
   margin-bottom: 10px;
 }
 
+.closeDiv {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-top: 10px;
+  right: 3vw;
+  color: #444140;
+  border-radius: 25px;
+  border:solid #444140;
+
+}
+
+.closeDiv:hover {
+  transition: all 0s linear;
+  background: #E54B4B;
+  color: #fff;
+}
+
 #shrink {
   animation: shrink 2s linear;
   animation-direction: alternate-reverse;

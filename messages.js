@@ -1,7 +1,9 @@
+
+
 module.exports = [
     {
         id: 0,
-        image : 'this always breaks',
+        
         caption: "example message",
         username: 'example username',
         comments: [

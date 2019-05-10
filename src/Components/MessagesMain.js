@@ -19,7 +19,7 @@ export default class MessagesMain extends Component {
     //I want to grab the message Api and store the response in state under messages
     //I need to grab the generated img when post is clicked.
     componentDidMount = () => {
-        axios.get('http://localhost:3255/api/messages')
+        axios.get('/api/messages')
         .then(res => {
             this.props.handleUpdateMessages(res.data)
         })
@@ -93,6 +93,7 @@ export default class MessagesMain extends Component {
 
     render() {
         const {messages} = this.props
+        
         const posts = messages.map((val) => {
             return (
                     <MessagePost 
@@ -104,12 +105,16 @@ export default class MessagesMain extends Component {
                     image={val.image}
                     caption={val.caption}
                     username={val.username}
+                    comments={val.comments}
                     />
             )
         })
+        
         return (
-            <main className="mainDiv messages">
+            <main className="mainDiv messages" id="posts">
+            
             <h2 className="whiteText">The Fridge</h2>
+            <img className='fakeImage' src={require('../imagesFigures/Barkeep.png')} alt="" />
                 <div className="searchDiv">
                     <div className="searchBars">
                         <div className="searchBar">

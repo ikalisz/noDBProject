@@ -3,6 +3,7 @@ import '../App.css'
 import Nav from './Nav'
 import images from '../images'
 import axios from 'axios';
+import Close from '@material-ui/icons/Close'
 
 export default class Main extends Component {
     constructor() {
@@ -58,6 +59,9 @@ export default class Main extends Component {
     render() {
         return (
             <main className="genMainDiv">
+                <div className="closeDiv" onClick={() => this.props.handleUpdatePostGen()}>
+                    <Close className="closeIcon" />
+                </div>
                 <Nav 
                 gender={this.props.gender}
                 thickness={this.props.thickness}
@@ -75,13 +79,16 @@ export default class Main extends Component {
                     <div className="buttonsAndCaption">
                         <button className="captionButtons" onClick={this.handleFindImage}>Generate</button>
                         { !this.state.allowPost ?
+                        <div>
                         <h3 className="whiteText">Generate Something!</h3> 
-
+                        
+                        </div>
                         : 
                         <div className="textAreaAndPostButton">
                         <h3 className="whiteText">Post Caption:</h3>
-                        <textarea onChange={(e) =>this.handleUpdateCaption(e)} id="textArea" rows="4" cols="30"></textarea>
-                        <button onClick={this.handleUpdatePosts} className="captionButtons" >Post on fridge</button>
+                        <textarea onChange={(e) =>this.handleUpdateCaption(e)} id="textArea" rows="4" cols="30" placeholder="Caption text here!"></textarea>
+                        <button onClick={this.handleUpdatePosts} className="captionButtons" >Post on The Fridge</button>
+                        
                         </div>
                         }
                     </div>
