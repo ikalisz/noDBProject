@@ -90,6 +90,38 @@ exports.modules = [
         hairStyle: 'short',
         hairColor: 'green'
     },
+    {
+        id: 11,
+        img: require('./imagesFigures/StickFigureRedShortHairRound.png'),
+        gender: 'male',
+        thickness: 'round',
+        hairStyle: 'short',
+        hairColor: 'red',
+    },
+    {
+        id: 12,
+        img: require('./imagesFigures/StickFigureRedShortHairRounder.png'),
+        gender: 'male',
+        thickness: 'rounder',
+        hairStyle: 'short',
+        hairColor: 'red'
+    },
+    {
+        id: 13,
+        img: require('./imagesFigures/StickFigureGreenLongHairRoundFemale.png'),
+        gender: 'female',
+        thickness: 'round',
+        hairStyle: 'long',
+        hairColor: 'green'
+    },
+    {
+        id: 14,
+        img: require('./imagesFigures/StickFigureRedShortHairRoundFemale.jpg'),
+        gender: 'female',
+        thickness: 'round',
+        hairStyle: 'short',
+        hairColor: 'red'
+    }
     
     
 ]

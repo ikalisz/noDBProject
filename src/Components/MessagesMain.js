@@ -109,6 +109,7 @@ export default class MessagesMain extends Component {
         })
         return (
             <main className="mainDiv messages">
+            <h2 className="whiteText">The Fridge</h2>
                 <div className="searchDiv">
                     <div className="searchBars">
                         <div className="searchBar">

@@ -81,7 +81,7 @@ export default class Main extends Component {
                         <div className="textAreaAndPostButton">
                         <h3 className="whiteText">Post Caption:</h3>
                         <textarea onChange={(e) =>this.handleUpdateCaption(e)} id="textArea" rows="4" cols="30"></textarea>
-                        <button onClick={this.handleUpdatePosts} className="captionButtons" >Post</button>
+                        <button onClick={this.handleUpdatePosts} className="captionButtons" >Post on fridge</button>
                         </div>
                         }
                     </div>

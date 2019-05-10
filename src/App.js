@@ -49,7 +49,6 @@ class App extends Component {
   }
 
   handleUpdateUsername = (e) => {
-    console.log(e.target.value)
     this.setState({username: e.target.value})
   }
 

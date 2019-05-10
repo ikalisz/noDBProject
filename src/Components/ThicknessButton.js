@@ -29,13 +29,13 @@ export default class ThicknessButton extends Component {
         const {anchorEl} = this.state
         return (
             <div className="selector Hair">
-                <h3>Thickness</h3>
+                <h3>Thiccness</h3>
                 <Button 
                 aria-owns={anchorEl ? 'simple-menu' : undefined}
                 aria-haspopup="true"
                 onClick={this.handleClick}
                 >
-                Select Thickness
+                Select Thiccness
                 </Button>
                 <Menu
                     id="simple-menu"
