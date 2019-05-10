@@ -3,7 +3,7 @@ import DeleteFilled from '@material-ui/icons/Delete'
 import EditFilled from '@material-ui/icons/Edit'
 import '../App.css'
 import axios from 'axios'
-
+import Button from './Button'
 export default class MessagePost extends Component {
     constructor() {
         super()
@@ -53,7 +53,9 @@ export default class MessagePost extends Component {
                 :
                 <div>
                     <p className="captionText"><span className="boldText">Caption:</span><input type="text" placeholder={"New text here!"} value={this.state.text} onChange={(e) => this.handleUpdateText(e)} />
-                    <button className="submitButton" onClick={() => this.handleEditAxios()}>Submit!</button>
+                    <Button
+                    fn={() => this.handleEditAxios()}
+                    />
                     </p>
                 </div>
                 
@@ -65,9 +67,7 @@ export default class MessagePost extends Component {
                 <div className="utilityIcons">
                         <DeleteFilled  className="trashIcon grow" onClick={() => this.props.handleDeletePost(this.props.id)}/>
                         <EditFilled className="editIcon grow" onClick={() => this.handleUpdateEditing()} />
-
-                    
-
+                        
                 </div>
             </div>
         )

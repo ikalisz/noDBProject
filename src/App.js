@@ -71,7 +71,7 @@ class App extends Component {
           :
           <div className="newPostGen" onClick={this.handleUpdatePostGen}>
             <Add className="plusIcon"/>
-            <button className="plusIconButton">Make a new post.</button>
+            <button className="plusIconButton">Make a new character post.</button>
           </div>
           }
 

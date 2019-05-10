@@ -1,8 +1,8 @@
 module.exports = [
     {
         id: 0,
-        image : "",
-        caption: "message text",
+        image : 'this always breaks',
+        caption: "example message",
         comments: [
             {
                 commentid: 0,

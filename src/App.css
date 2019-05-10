@@ -270,7 +270,7 @@ body {
 }
 
 .genMainDiv {
-  height: 110vh;
+  height: 120%;
   background: #1E1E24;
   width: 95vw;
   border: 5px solid #E54B4B;
@@ -306,6 +306,53 @@ body {
 .newPostGen:hover {
   transition: all .3s ease-in-out;
   transform: scale(1.2)
+}
+
+.searchDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.searchBars {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  height: 40px;
+  border: solid 3px;
+  border-color: #E54B4B;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 25px;
+}
+
+.refreshDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.filterInput {
+  width: 70%;
+  border: none;
+}
+
+.resetText {
+  color: #fff;
+  margin: 0;
+  margin-left: 5px;
 }
 
 #shrink {

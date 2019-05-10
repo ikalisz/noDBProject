@@ -41,6 +41,22 @@ const controller = {
         })
         messages.splice(messIndex, 1)
         res.status(200).send(messages)
+    },
+    filterId(req, res) {
+        let {id} = req.params
+        let filteredById = messages.filter(val => {
+            return val.id === +id
+        })
+        res.status(200).send(filteredById)
+    },
+    filterCaption(req, res) {
+        let {caption} = req.params
+        let filteredByCaption = messages.filter(val => {
+            console.log(req.params.caption)
+            console.log(val.caption)
+            return val.caption.includes(caption)
+        })
+        res.status(200).send(filteredByCaption)
     }
 }
 
