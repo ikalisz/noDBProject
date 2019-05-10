@@ -39,7 +39,8 @@ export default class Main extends Component {
     handleCreatePost = () => {
         axios.post('/api/messages', {
             image: this.state.imageToDisplay,
-            captionText: this.state.captionText
+            captionText: this.state.captionText,
+            username: this.props.username,
         })
         .then(res => {
             this.props.handleUpdateMessages(res.data)

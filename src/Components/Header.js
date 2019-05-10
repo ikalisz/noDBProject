@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
-export default function Header() {
+import UsernameDisplay from './UsernameAlert'
+export default function Header(props) {
     return (
         <header className="header spaceBetween">
             <h3 className="home">
@@ -9,6 +10,7 @@ export default function Header() {
             <h2 className="titleText">
                 Picasso's Character Creater
             </h2>
+            <UsernameDisplay username={props.username}/>
             <div className="postAboutHeader spaceBetween">
                 <h3>Posts</h3>
                 <h3>About</h3>

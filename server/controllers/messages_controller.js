@@ -28,6 +28,7 @@ const controller = {
             id: messageId,
             image: req.body.image,
             caption: req.body.captionText,
+            username: req.body.username,
             comments: [],
         }
         messageId++
@@ -54,7 +55,7 @@ const controller = {
         let filteredByCaption = messages.filter(val => {
             console.log(req.params.caption)
             console.log(val.caption)
-            return val.caption.includes(caption)
+            return val.caption.toLowerCase().includes(caption.toLowerCase())
         })
         res.status(200).send(filteredByCaption)
     }

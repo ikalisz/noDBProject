@@ -103,6 +103,7 @@ export default class MessagesMain extends Component {
                     key={val.id}
                     image={val.image}
                     caption={val.caption}
+                    username={val.username}
                     />
             )
         })

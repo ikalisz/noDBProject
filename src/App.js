@@ -4,6 +4,7 @@ import './App.css';
 import Main from './Components/Main'
 import MessagesMain from './Components/MessagesMain'
 import Add from '@material-ui/icons/Add'
+import swal from '@sweetalert/with-react'
 
 class App extends Component {
   constructor() {
@@ -15,7 +16,41 @@ class App extends Component {
       hairColor: '',
       messages: [],
       postGenerated: false,
+      username: '',
     }
+  }
+
+  handleUsername = () => {
+    swal({
+      text: 'Please enter a username',
+      buttons: {
+        confirm : {
+          text: 'Submit'
+        }
+      },
+      content: (
+        <input type="text" onChange={(e) => {this.handleUpdateUsername(e)}} placeholder={'Enter a username here!'}/>
+      )
+      }
+    )
+    .then(() => this.handleCheckUsername())
+    
+  }
+
+  componentDidMount = () => {
+    this.handleUsername()
+  }
+
+  handleCheckUsername = () => {
+    if (!this.state.username) {
+      swal("You didn't enter a username!", "", "error" )
+      .then(() => this.handleUsername())
+    }
+  }
+
+  handleUpdateUsername = (e) => {
+    console.log(e.target.value)
+    this.setState({username: e.target.value})
   }
 
   handleUpdateGender = (val) => {
@@ -50,13 +85,14 @@ class App extends Component {
     return (
       <div>
         {/* here goes the header component */}
-        <Header />
+        <Header username={this.state.username} />
         
         <div className="bodyDiv">
 
         
           {this.state.postGenerated?
           <Main 
+          username={this.state.username}
           gender={this.state.gender} 
           hairColor={this.state.hairColor}
           thickness={this.state.thickness}

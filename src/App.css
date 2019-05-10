@@ -347,12 +347,22 @@ body {
 .filterInput {
   width: 70%;
   border: none;
+  border-radius: 25px;
 }
 
 .resetText {
   color: #fff;
   margin: 0;
   margin-left: 5px;
+}
+
+.swal-overlay {
+  background-color: #444140 ;
+  
+}
+
+.selector span {
+  margin-bottom: 10px;
 }
 
 #shrink {
