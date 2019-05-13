@@ -17,7 +17,8 @@ const controller = {
             id: updateMessage.id,
             image: updateMessage.image,
             caption: text || updateMessage.caption,
-            comments: updateMessage.comments
+            comments: updateMessage.comments,
+            username: updateMessage.username
         }
         messages.splice(messIndex, 1, newPost)
         res.status(200).send(messages)
